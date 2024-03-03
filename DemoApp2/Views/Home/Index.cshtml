@@ -1,0 +1,71 @@
+@model IEnumerable<DeptEmp.Models.EmpInfo>
+<html>
+    <head>
+        <title>DEPARTMENT_EMPLOYEE</title>
+        <h1>****Our Employee****</h1>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+
+            table {
+                border='2';
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: rgb(30, 2, 37);
+                color: #ffffff;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #ffffff;
+            }
+
+            tr:hover {
+                background-color: #95a5a6;
+            }
+            button{
+                background-color: #22a1aa;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+             <tr>
+                <th>Emp Id</th>
+                <th>Emp Name</th>
+                <th>Salary</th>
+                <th>Dept Id</th>
+            </tr>
+                @foreach(var Emp in Model)
+
+                {
+                <tr>
+                    <td>@Emp.EmpId</td>
+                    <td>@Emp.EmpName</td>
+                    <td>@Emp.Sal</td>
+                    <td>@Emp.DeptId</td>
+                </tr>
+                 }
+        </table>
+        <br>
+        <a href="/Home/Register"><button>Employee Registration</button> </a>
+        <a href="/Home/Delete"><button>Employee Remove</button> </a>
+        <a href="/Home/Update"><button>Employee Update</button> </a>
+        <a href="/Home/AddDept"><button>ADD_department</button> </a>
+    </body>
+
+</html>

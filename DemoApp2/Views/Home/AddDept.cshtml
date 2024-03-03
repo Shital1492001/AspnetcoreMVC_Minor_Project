@@ -1,0 +1,38 @@
+@model DeptEmp.Models.Department
+<html>
+    <head>
+        <title>ADD_department</title>
+        <style>
+            body{
+                background-color: pink;
+            }
+            h1{
+                color: chocolate;
+            }
+            b{
+                color: rgb(58, 10, 54);
+            }
+            input{
+                background-color: #22a1aa;
+            }
+            ::-webkit-inner-spin-button{
+                color: rgb(128, 8, 8);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome HR......!</h1>
+        <form method="post">
+            <b>Enter DeptID</b>
+            @Html.TextBoxFor(entry => entry.Id)<br><br>
+            <b>Enter DNAME:</b>
+            @Html.TextBoxFor(entry => entry.dname)<br><br>
+            <b>Enter Location:</b>
+            @Html.TextBoxFor(entry => entry.dloc)<br><br>
+            <input type="submit" value="AddDept"/>
+        </form>
+        <p>
+            <i>@Html.ValidationMessageFor(entry => entry.Id)</i>
+        </p>
+    </body>
+</html>

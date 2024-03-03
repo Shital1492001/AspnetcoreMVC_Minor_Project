@@ -1,0 +1,40 @@
+@model DeptEmp.Models.Employee
+<html>
+    <head>
+        <title>DEPARTMENT_EMPLOYEE</title>
+        <style>
+            body{
+                background-color: powderblue;
+            }
+            h1{
+                color: chocolate;
+            }
+            b{
+                color: rgb(58, 10, 54);
+            }
+            input{
+                background-color: #22a1aa;
+            }
+            ::-webkit-inner-spin-button{
+                color: rgb(128, 8, 8);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <form method="post">
+            <b>Enter EMPNO</b>
+            @Html.TextBoxFor(entry => entry.Id)<br><br> 
+            <!-- <b>Enter EMPNAME:</b>
+            @Html.TextBoxFor(entry => entry.Ename)<br><br> -->
+            <!-- <b>Enter SAlARY:</b>
+            @Html.TextBoxFor(entry => entry.Sal)<br><br>-->
+            <b>Enter DEPTNO:</b>
+            @Html.TextBoxFor(entry => entry.DepartmentId)<br><br>  
+            <input type="submit" value="Delete"/>
+        </form>
+        <p>
+            <i>@Html.ValidationMessageFor(entry => entry.Id)</i>
+        </p>
+    </body>
+</html>
